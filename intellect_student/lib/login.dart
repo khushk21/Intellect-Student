@@ -11,11 +11,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildLogo() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Padding(
-            padding: const EdgeInsets.symmetric(vertical: 70),
-            child: LogoImageAsset())
-      ],
+      children: <Widget>[LogoImageAsset()],
     );
   }
 
@@ -97,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Text(
               "Login",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.white70,
                 letterSpacing: 1.5,
                 fontSize: MediaQuery.of(context).size.height / 40,
               ),
@@ -114,11 +110,11 @@ class _LoginPageState extends State<LoginPage> {
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.all(
-            Radius.circular(20),
+            Radius.circular(0.1),
           ),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.65,
-            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.69,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
@@ -130,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Enter your email and password",
+                      "Enter your email and password.",
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.height / 30,
                       ),
@@ -153,33 +149,17 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.blueGrey,
-        body: SingleChildScrollView(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.height * 0.6,
-                width: MediaQuery.of(context).size.width,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: const Radius.circular(40),
-                      bottomRight: const Radius.circular(40),
-                    ),
-                  ),
-                ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _buildLogo(),
-                  _buildContainer(),
-                ],
-              )
-            ],
-          ),
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildLogo(),
+                _buildContainer(),
+              ],
+            )
+          ],
         ),
       ),
     );
