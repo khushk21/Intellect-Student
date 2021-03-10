@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Challenges/challeges_screen.dart';
 import 'package:flutter_auth/Screens/Reset/components/background.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
@@ -30,6 +31,14 @@ class Body extends StatelessWidget {
                 text: "RESET",
                 press: () {
                   print('Your password has been reset');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ChallengeScreen();
+                      },
+                    ),
+                  );
                 },
               ),
               SizedBox(height: size.height * 0.03),
